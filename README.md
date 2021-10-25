@@ -1,1 +1,1 @@
-# ga-jsdr06-homework
+Repo for GA JS part time course: homework assignments.
