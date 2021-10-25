@@ -34,7 +34,7 @@ console.log(greeting);
 
 // Bonus: Make just the first character uppercased!
 let capitalise = "hello";
-capitalise = capitalise.charAt(0).toUpperCase() + greet.slice(1);
+capitalise = capitalise.charAt(0).toUpperCase() + capitalise.slice(1);
 console.log(capitalise);
 
 // Get the second character out of a string?
