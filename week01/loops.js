@@ -46,3 +46,11 @@ for (z; z <=100; z ++) {
         console.log(z);
     }
 }
+
+// Refactor to make it cleaner
+let z = 1;
+for (z; z <= 100; z++)
+        (z % 15 === 0) ? console.log(z + " " + "FizzBuzz")
+        : (z % 3 === 0) ? console.log(z + " " + "Fizz")
+        : (z % 5 === 0) ? console.log(z + " " + "Buzz")
+        : console.log(z);
