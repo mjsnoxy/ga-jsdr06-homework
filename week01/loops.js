@@ -22,7 +22,7 @@ for (x; x >= -16; x --) {
 let y = 8
 
 for (y; y <= 41; y ++) {
-    if (y % 4 == 0) {
+    if (y % 4 === 0) {
         console.log(y);
     }
 }
