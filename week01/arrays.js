@@ -34,23 +34,25 @@ console.log(lastitem);
 console.log(rainbowColors.indexOf("blue"));
 
 // Bonus: Find out the difference between.slice and.splice
-// From https://javascript.info/array-methods: The arr.splice method is a swiss army knife for arrays. It can do everything: insert, remove and replace elements.
-// slice returns a new array copying to it all items from index start to end (not including end)
-// Examples:
+
+// Create a copy of rainbowColors using an array method and call it twoColors.Essentially pull two colors out of the array(say, between the index of 1 and 3)
+let twoColours = rainbowColors.slice(1, 3)
+console.log(twoColours);
+
+// Starting with this array const nums = [0, 1, 2, 2, 2, 3, 3, 4, 5];, remove the duplicates destructively using slice or splice(whichever one is appropriate).Note: This will have to be done with multiple method calls
+const nums = [0, 1, 2, 2, 2, 3, 3, 4, 5];
+
+// Additional examples
 
 let hitchhikers = ["Ford", "Arthur", "Zaphod", "Trillian", "Marvin"];
 
-// Slice - let's get rid of Marvin as he's depressing.
-let lostRobot = hitchhikers.slice(4);
+// Slice - let's get rid of Marvin as he's depressing. He can start a new array of his own and try to find friends.
+let lostRobot = hitchhikers.slice(4); // Removes 4th item from the array by index and creates a new array with it.
 console.log(lostRobot);
 
-// Splice - 
-
-// Create a copy of rainbowColors using an array method and call it twoColors.Essentially pull two colors out of the array(say, between the index of 1 and 3)
-
-
-// Starting with this array const nums = [0, 1, 2, 2, 2, 3, 3, 4, 5];, remove the duplicates destructively using slice or splice(whichever one is appropriate).Note: This will have to be done with multiple method calls
-
+// Splice - Arthur needs to spend some time becoming a sandwich maker, but the crew are happy to replace him with a mouse.
+hitchhikers.splice(1, 1, "Mouse"); // Delete 1 item from the index position of 1 and insert "Mouse".
+console.log(hitchhikers);
 
 
 
