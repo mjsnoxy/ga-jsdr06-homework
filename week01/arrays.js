@@ -42,16 +42,20 @@ console.log(twoColours);
 // Starting with this array const nums = [0, 1, 2, 2, 2, 3, 3, 4, 5];, remove the duplicates destructively using slice or splice(whichever one is appropriate).Note: This will have to be done with multiple method calls
 const nums = [0, 1, 2, 2, 2, 3, 3, 4, 5];
 
+
+nums.indexOf(0);
+
 // Additional examples
 
 let hitchhikers = ["Ford", "Arthur", "Zaphod", "Trillian", "Marvin"];
 
-// Slice - let's get rid of Marvin as he's depressing. He can start a new array of his own and try to find friends.
-let lostRobot = hitchhikers.slice(4); // Removes 4th item from the array by index and creates a new array with it.
-console.log(lostRobot);
+// Slice - Zaphod has two heads, so lets's 'slice' one off and make a new array.
+let oneHead = hitchhikers.slice(2, 3); 
+console.log(oneHead);
+
 
 // Splice - Arthur needs to spend some time becoming a sandwich maker, but the crew are happy to replace him with a mouse.
-hitchhikers.splice(1, 1, "Mouse"); // Delete 1 item from the index position of 1 and insert "Mouse".
+hitchhikers.splice(1, 1, "Mouse"); 
 console.log(hitchhikers);
 
 
