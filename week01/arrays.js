@@ -71,10 +71,20 @@ const arrOfArrs = [["inner array first item", "inner array second item"], ["firs
 console.log(arrOfArrs[0][0]);
 
 // Print "third" by using a dynamic index
+let x = 0
+let y = 0 
 
-
+for (x; x <= arrOfArrs.length - 1; x++) {
+  for (y; y <= arrOfArrs[x].length - 1; y++) {
+    if (arrOfArrs[x][y] === "third") {
+      console.log(arrOfArrs[x][y]);
+    }
+  }
+}
 
 // Bonus: Loop through the second inner array! Print out the first item, the second item, then the third item
+
+
 
 // Your top choices
 // Create an array to hold your top five choices of something(dogs, books, presidents, whatever you want).
