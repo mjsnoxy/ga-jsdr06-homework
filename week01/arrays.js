@@ -42,19 +42,21 @@ console.log(twoColours);
 // Starting with this array const nums = [0, 1, 2, 2, 2, 3, 3, 4, 5];, remove the duplicates destructively using slice or splice(whichever one is appropriate).Note: This will have to be done with multiple method calls
 const nums = [0, 1, 2, 2, 2, 3, 3, 4, 5];
 
+nums.splice(3, 3); // Starting from index 3 remove three items from the array.
 
-nums.indexOf(0);
+console.log(nums);
 
-// Additional examples
+
+// Additional example to solidify learning.
 
 let hitchhikers = ["Ford", "Arthur", "Zaphod", "Trillian", "Marvin"];
 
-// Slice - Zaphod has two heads, so lets's 'slice' one off and make a new array.
+// Slice - Zaphod has two heads, so lets's 'slice' one off and make a new array by taking the element between index 2 and 3
 let oneHead = hitchhikers.slice(2, 3); 
 console.log(oneHead);
 
 
-// Splice - Arthur needs to spend some time becoming a sandwich maker, but the crew are happy to replace him with a mouse.
+// Splice - Arthur needs to spend some time becoming a sandwich maker, but the crew are happy to replace him with a mouse. Start with the element at index 1, deleting 1, replace with "mouse"
 hitchhikers.splice(1, 1, "Mouse"); 
 console.log(hitchhikers);
 
@@ -62,10 +64,15 @@ console.log(hitchhikers);
 
 // Bonus: Work with arrays of arrays
 // Starting with this array const arrOfArrs = [["inner array first item", "inner array second item"], ["first", "second", "third"]];
+const arrOfArrs = [["inner array first item", "inner array second item"], ["first", "second", "third"]];
 
 // Access "inner array first item" and print it out
 
+console.log(arrOfArrs[0][0]);
+
 // Print "third" by using a dynamic index
+
+
 
 // Bonus: Loop through the second inner array! Print out the first item, the second item, then the third item
 
