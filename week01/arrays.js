@@ -70,25 +70,56 @@ const arrOfArrs = [["inner array first item", "inner array second item"], ["firs
 
 console.log(arrOfArrs[0][0]);
 
-// Print "third" by using a dynamic index
+// Print "third" by using a dynamic index (hint: maybe indexOf or includes would help!)
 let x = 0
 let y = 0 
-
+//Surely there's a better way to do this? Seems very verbose.
 for (x; x <= arrOfArrs.length - 1; x++) {
   for (y; y <= arrOfArrs[x].length - 1; y++) {
-    if (arrOfArrs[x][y] === "third") {
+    if (arrOfArrs[x][y].includes("third")) {
       console.log(arrOfArrs[x][y]);
     }
   }
 }
 
 // Bonus: Loop through the second inner array! Print out the first item, the second item, then the third item
-
+// If I declare x and y outside the loops this example only prints "third", yet declaring them inside the loop works. Frazzled brain doesn't understand why.
+for (let x = 0; x <= arrOfArrs.length - 1; x++) {
+    for (let y = 0; y <= arrOfArrs[x].length - 1; y++) {
+        if (x != 0) {
+            console.log(arrOfArrs[x][y]);
+        }
+    }
+}
 
 
 // Your top choices
 // Create an array to hold your top five choices of something(dogs, books, presidents, whatever you want).
 
-// For each choice, log to the screen a string like: "My #1 choice is blue."
+const bands = [
+    "Smashing Pumpkins",
+    "Foo Fighters",
+    "Biffy Clyro",
+    "Nirvana",
+    "The Prodigy"
+];
+
+// // For each choice, log to the screen a string like: "My #1 choice is blue."
+let x = 0
+for (x; x <= bands.length -1; x++) {
+    console.log(`My #${x + 1} choice is ${bands[x]}`);
+}
 
 // Bonus: Change it to log "My 1st choice", "My 2nd choice", "My 3rd choice", picking the right suffix for the number based on what it is.
+
+const suf = [
+    "st",
+    "nd",
+    "rd",
+    "th",
+    "th"
+]
+
+for (x; x <= bands.length - 1; x++) {
+    console.log(`My #${x + 1}${suf[x]} choice is ${bands[x]}`);
+}
