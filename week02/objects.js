@@ -75,8 +75,14 @@ for (i = 0; i < recipe.ingredients.length; i++) {
 // It's like IMDB, but much much smaller!
 // Create an object to store the following information about your favorite movie: title(a string), duration(a number), director(a string) and stars(an array of strings).
 
+favMovie = {
+    title: "Star Wars Episode IV: The Empire Strikes Back",
+    duration: 124,
+    director: "Irvin Kershner",
+    stars: ["Mark Hamill", "Carrie Fisher", "Harrison Ford", "Billy Dee Williams", "Frank Oz", "David Prowse", "Alec Guinness", "Anthony Daniels", "Kenny Baker", "Peter Mayhew", "James Earl Jones"],
+}
 
 // Print out the movie information like so: "'The Life Aquatic' lasts for 118 minutes, and was directed by Wes Anderson. Stars: Bill Murray, Cate Blanchett, Anjelica Huston, Jeff Goldblum and Willem Dafoe."
-
-
 // Maybe the join method will be helpful?
+let lastStar = favMovie.stars.splice((favMovie.stars.length -1),1)
+console.log(`'${favMovie.title}' lasts for ${favMovie.duration} minutes, and was directed by ${favMovie.director}. Stars: ${favMovie.stars.join(", ")} and ${lastStar}.`)
