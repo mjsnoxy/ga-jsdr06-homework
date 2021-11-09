@@ -4,54 +4,89 @@
 // If the received age is equal to or over 16, print "Drive away!"
 // Bonus: If the user can't drive yet, tell them how many years they will have to wait (e.g. "Sorry, you have 4 years to wait until you can drive")
 
+function drivingAge(canDrive, legalDrive) {
+    let age = parseInt(canDrive("How old are you?"));
+    let legalAge = parseInt(legalDrive("Enter the legal driving age for your country"));
+
+    (age >= legalAge) ? console.log("Drive away!")
+        : console.log(`Sorry, you can't drive yet! You still have another ${legalAge - age} years before you can drive.`);
+};
+
+drivingAge(prompt, prompt);
+
+
 // The World Translator
 // Write a function called translator that receives a language(e.g. "fr", "eng" etc.).Log out the translated version(e.g.if the language is "eng" - log "Hello World", if the language is "fr" - log "Bonjour le monde" etc.)
 
+function translator(language) {
+    let lang = language("Type an abbreviated language: En, Fr, Nw, Tk, Th, Jp or Id");
+
+    let choice = (lang === "en") ? console.log("Hello, world!")
+        : (lang === "fr") ? console.log("Bonjour le monde!")
+            : (lang === "nw") ? console.log("Hei Verden!")
+                : (lang === "tk") ? console.log("Selam Dünya")
+                    : (lang === "th") ? console.log("S̄wạs̄dī chāw lok")
+                        : (lang === "jp") ? console.log("Kon'nichiwa sekai")
+                            : (lang === "id") ? console.log("Halo Dunia!")
+                                : console.log("Sorry, try again - I don't know the language you typed.");
+};
+
+translator(prompt);
+
 // The Age Calculator
 // Forgot how old you are ? Calculate it!
-
 // Write a function named calculateAge that:
-
 // Takes 2 arguments: birthYear, and currentYear.
 // Calculates the 2 possible ages based on those years.
 // Outputs the result: "You are either NN or NN"
 // Call the function three times with different sets of values.
 //     Bonus: Figure out how to get the current year in JavaScript instead of passing it in.
 
+function calculateAge (birthYear) { // Only passing one argument as dynamically getting the year.
+    const fullDate = new Date();
+    let currentYear = fullDate.getFullYear();
+    let born = birthYear("What year were you born?");
+    console.log(`You are either ${(currentYear - born) -1} or ${(currentYear - born)}`)
+}
+
+calculateAge(prompt); 
+
 // The Lifetime Supply Calculator
 // Ever wonder how much a "lifetime supply" of your favorite snack is ? Wonder no more!
-
 // Write a function named calculateSupply that:
-
 // Takes 2 arguments: age, and amountPerDay.
 // Calculates the amount consumed for rest of the life(based on a constant max age).
 // Outputs the result to the screen like so: "You will need NN to last you until the ripe old age of X"
 // Call that function three times, passing in different values each time.
-//     Bonus: Accept floating point values for amountPerDay, and round the result to a round number.
+// Bonus: Accept floating point values for amountPerDay, and round the result to a round number.
+
+function calculateSupply(age, snackName, amountPerDay) {
+    const maxAge = 83; // Average current life expectancy in Australia rounded up.
+    let snack = snackName("What is your favourite snack?")
+    let dailyConsumption = Math.round(amountPerDay(`How many ${snackName} do you eat per day?`));
+    let currentAge = age("How old are you?");
+    let lifeSupply = (maxAge - currentAge) * (dailyConsumption * 365);
+    console.log(`You will need ${lifeSupply} of ${snack} to last you until the ripe old age of ${maxAge}`);
+}
+
+calculateSupply(prompt, prompt, prompt);
 
 // The Geometrizer
 // Create 2 functions that calculate properties of a circle, using the definitions here.
-
 // Create a function called calcCircumference:
-
 // Pass the radius to the function.
 // Calculate the circumference based on the radius, and output "The circumference is NN".
 // Create a function called calcArea:
 
-// Pass the radius to the function.
-// Calculate the area based on the radius, and output "The area is NN".
-// The Temperature Converter
-// It's hot out! Let's make a converter based on the steps here.
 
 // Create a function called celsiusToFahrenheit:
-
 // Store a celsius temperature into a variable.
 // Convert it to fahrenheit and output "NN°C is NN°F".
 // Create a function called fahrenheitToCelsius:
-
 // Now store a fahrenheit temperature into a variable.
 // Convert it to celsius and output "NN°F is NN°C".
-//     Exercises: Functions(very difficult)
+
+// Exercises: Functions(very difficult)
 // The following tasks are very, very difficult and not something we expect you to be able to do just yet.But if you are looking for an extra challenge and have a lot of time on your hands, have a go!
 
 // Working with Users
@@ -81,7 +116,7 @@
 // ];
 // Create a function that receives an ID(index), an email and a password.If the function was provided with an email and a password that matches up, log "You are logged in".Otherwise, log "Sorry, something went wrong".
 
-//     Bonus: Working with Users
+// Bonus: Working with Users
 // Don't receive an ID! Find the user based on the email
 // Make a function that creates an account.e.g.createAccount("chico@gmail.com", "redLippedBatfish", false);
 // This should just add another object into the array
@@ -92,9 +127,10 @@
 // Bonus: Instead of receiving two strings to illustrate the change(like above), receive an object so you could potentially change multiple things at once.e.g.updateAccount("harpo@ga.co", { password: "gharial", isAdmin: false });
 // Bonus: Make this work only if the current password was also provided as a parameter.e.g.updateAccount("harpo@ga.co", "elephant", { password: "gharial", isAdmin: true });
 // Add a few extra users and make a search function. I'll let you decide on the interface or the function signature
+// 
+
 // Bonus: A Transit Application
 // Start with this data...
-
 // const stations = ["Museum", "St. James", "Circular Quay", "Wynyard", "Townhall", "Central", "Redfern", "Macdonaldtown", "Newtown"];
 // Create a function called travelFrom that receives a start station and an end station.
 
