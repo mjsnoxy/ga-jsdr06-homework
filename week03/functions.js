@@ -112,6 +112,8 @@ function fahrenheitToCelsius(fahrenheit) {
  }
 fahrenheitToCelsius(parseInt(prompt("Enter the fahrenheit temperature")));
 
+// STILL TO DO!
+
 // Exercises: Functions(very difficult)
 // The following tasks are very, very difficult and not something we expect you to be able to do just yet.But if you are looking for an extra challenge and have a lot of time on your hands, have a go!
 
