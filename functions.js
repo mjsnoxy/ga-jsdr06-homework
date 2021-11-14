@@ -63,8 +63,8 @@ calculateAge(prompt);
 function calculateSupply(age, snackName, amountPerDay) {
     const maxAge = 83; // Average current life expectancy in Australia rounded up.
     let snack = snackName("What is your favourite snack?")
-    let dailyConsumption = Math.round(amountPerDay(`How many ${snackName} do you eat per day?`));
-    let currentAge = age("How old are you?");
+    let dailyConsumption = Math.round(amountPerDay(`How many ${snack} do you eat per day?`));
+    let currentAge = parseInt(age("How old are you?"));
     let lifeSupply = (maxAge - currentAge) * (dailyConsumption * 365);
     console.log(`You will need ${lifeSupply} of ${snack} to last you until the ripe old age of ${maxAge}`);
 }
@@ -76,15 +76,41 @@ calculateSupply(prompt, prompt, prompt);
 // Create a function called calcCircumference:
 // Pass the radius to the function.
 // Calculate the circumference based on the radius, and output "The circumference is NN".
-// Create a function called calcArea:
+ function calcCircumference(radius) {
+     let circumference = (2 * radius) * Math.PI;
+     console.log(`The circumference is ${circumference}`)
+ }
 
+ calcCircumference(parseInt(prompt("Enter the radius")));
+
+// Create a function called calcArea:
+// Pass the radius to the function.
+// Calculate the area based on the radius, and output "The area is NN".
+function calcArea(radius) {
+    let area = Math.PI * Math.pow(radius, 2);
+    console.log(`The area is ${area}`);
+}
+
+calcArea(parseInt(prompt("Enter the radius")));
 
 // Create a function called celsiusToFahrenheit:
 // Store a celsius temperature into a variable.
 // Convert it to fahrenheit and output "NN°C is NN°F".
+function celsiusToFahrenheit(celsius) {  
+    let fahrenheit = (celsius * 9/5) + 32;
+    console.log(`${celsius}°C is ${fahrenheit}°F`)
+}
+celsiusToFahrenheit(parseInt(prompt("Enter the celsius temperature")));
+
 // Create a function called fahrenheitToCelsius:
 // Now store a fahrenheit temperature into a variable.
 // Convert it to celsius and output "NN°F is NN°C".
+
+function fahrenheitToCelsius(fahrenheit) { 
+    let celsius = (fahrenheit - 32) * (5/9);
+    console.log(`${fahrenheit}°F is ${celsius}°C`)
+ }
+fahrenheitToCelsius(parseInt(prompt("Enter the fahrenheit temperature")));
 
 // Exercises: Functions(very difficult)
 // The following tasks are very, very difficult and not something we expect you to be able to do just yet.But if you are looking for an extra challenge and have a lot of time on your hands, have a go!
