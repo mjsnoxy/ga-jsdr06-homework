@@ -37,7 +37,7 @@ function drawMap() {
         id: 'mapbox/streets-v11',
         tileSize: 512,
         zoomOffset: -1,
-        accessToken: 'pk.eyJ1IjoibWpzbm94eSIsImEiOiJja3dyY3pmMGEwaDF6MnFtdHk1eGt1bDhoIn0.-N6AkjjCcP66Qm-mHi-QIQ'
+        accessToken: 'ACCESSTOKENHERE'
     }).addTo(map);
 
     // Add custom icon - see https://leafletjs.com/reference.html#icon
